@@ -202,21 +202,3 @@ function backtest(candle_observable::AbstractSubscribable,
      strategy_subject,
      simulator_session_actor)
 end
-
-"""$(TYPEDSIGNATURES)
-
-I'm just trying to figure out what can be passed in as kwargs.
-
-It looks like `Union{AbstractDict,NamedTuple}` might work.
-"""
-function foo(a::Int64; x::Int64=5, y::Float64=9.0)
-    @info :kwargs a x y
-end
-
-function bar(t::T) where T <: DataType
-    # Can I do the equivalent of this if-expression with just the type system?
-    if !(t <: AbstractStrategy)
-        @warn "$(typeof(t)) is not a subtype of AbstractStrategy"
-    end
-    @info :type t
-end
