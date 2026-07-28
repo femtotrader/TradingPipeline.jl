@@ -129,3 +129,5 @@ strategy_config = HMA2Strategy => Dict()
 t2 = @start backtest(observable, strategy_config)
 
 =#
+
+# I need inspiration.
